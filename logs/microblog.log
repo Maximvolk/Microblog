@@ -71,3 +71,6 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'wtf'. Jinja was 
 2018-09-26 19:35:12,228 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
 2018-09-26 19:36:13,960 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
 2018-09-26 19:40:49,507 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-26 22:07:21,998 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-27 11:37:54,730 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:56]
+2018-09-27 11:38:38,859 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:56]
