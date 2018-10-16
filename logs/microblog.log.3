@@ -1,4 +1,4 @@
-2018-09-24 22:23:56,467 ERROR: Exception on /user/igor [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-09-24 22:24:00,180 ERROR: Exception on /user/igor [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -57,3 +57,32 @@ Traceback (most recent call last):
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'user'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2018-09-24 22:25:06,316 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-24 22:26:26,683 ERROR: Exception on /follow/max [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 111, in follow
+    user.follow(username)
+  File "/Users/max/Documents/Python/microblog/app/models.py", line 29, in follow
+    if not self.is_following(user):
+  File "/Users/max/Documents/Python/microblog/app/models.py", line 38, in is_following
+    followers.c.followed_id == user.id).count() > 0
+AttributeError: 'str' object has no attribute 'id'
+2018-09-24 22:34:36,216 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-24 22:34:50,906 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 18:33:03,371 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 18:36:38,525 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 18:54:58,796 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
