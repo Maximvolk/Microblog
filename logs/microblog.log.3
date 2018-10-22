@@ -1,4 +1,4 @@
-2018-09-24 22:24:00,180 ERROR: Exception on /user/igor [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-10-19 13:48:51,557 ERROR: Exception on /index [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,26 +14,32 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/app/routes.py", line 82, in user
-    return render_template('user.html', title=username.capitalize(), user=user, posts=posts)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 38, in index
+    posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/max/Documents/Python/microblog/app/templates/user.html", line 11, in template
-    <p>{% user.followers.count() %} followers, {% user.followed.count() %} following</p>
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 9, in template
+    $(destElem).html('<img src="{{ url_for(\'static\', filename=\'loading.gif\') }}">');
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 9, in template
+    $(destElem).html('<img src="{{ url_for(\'static\', filename=\'loading.gif\') }}">');
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
     return Parser(self, source, name, encode_filename(filename)).parse()
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
@@ -46,43 +52,44 @@ Traceback (most recent call last):
     node.body = self.parse_statements(('name:endblock',), drop_needle=True)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
     result = self.subparse(end_tokens)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 144, in parse_statement
-    self.fail_unknown_tag(token.value, token.lineno)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 97, in fail_unknown_tag
-    return self._fail_ut_eof(name, self._end_token_stack, lineno)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
-    self.fail(' '.join(message), lineno)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'user'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2018-09-24 22:25:06,316 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 22:26:26,683 ERROR: Exception on /follow/max [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/app/routes.py", line 111, in follow
-    user.follow(username)
-  File "/Users/max/Documents/Python/microblog/app/models.py", line 29, in follow
-    if not self.is_following(user):
-  File "/Users/max/Documents/Python/microblog/app/models.py", line 38, in is_following
-    followers.c.followed_id == user.id).count() > 0
-AttributeError: 'str' object has no attribute 'id'
-2018-09-24 22:34:36,216 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 22:34:50,906 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-25 18:33:03,371 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-25 18:36:38,525 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-25 18:54:58,796 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 754, in parse_call
+    token = self.stream.expect('lparen')
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/lexer.py", line 388, in expect
+    next(self)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/lexer.py", line 739, in tokeniter
+    name, filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected char '\\' at 278
+2018-10-19 13:51:21,470 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-19 13:56:05,916 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]

@@ -1,6 +1,7 @@
-2018-09-19 12:12:42,244 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-19 12:13:39,551 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-19 12:13:43,447 ERROR: Exception on /edit_profile [POST] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2018-09-26 15:33:44,870 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:50]
+2018-09-26 19:31:58,858 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-26 19:32:09,858 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-26 19:32:35,675 ERROR: Exception on / [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -16,47 +17,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/app/routes.py", line 88, in edit_profile
-    form = EditProfileForm(current_user.username)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 212, in __call__
-    return type.__call__(cls, *args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/app/forms.py", line 39, in __init__
-    super(EditProfileForm.self).__init__(*args, **kwargs)
-AttributeError: type object 'EditProfileForm' has no attribute 'self'
-2018-09-19 12:14:41,696 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-19 12:15:13,872 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-19 12:15:38,987 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-22 20:32:16,345 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-22 20:36:47,405 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-22 20:36:53,447 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 20:30:09,183 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 20:30:23,777 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 20:30:57,587 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 20:31:59,631 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 20:33:07,160 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 21:57:06,936 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 21:57:39,980 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 21:58:27,837 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 22:19:40,656 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 22:20:05,126 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
-2018-09-24 22:21:39,142 ERROR: Exception on /user/igor [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/app/routes.py", line 82, in user
-    return render_template('user.html', title=username.capitalize(), user=user, posts=posts)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 32, in index
+    posts=posts.items, next_url=next_url, prev_url=prev_url)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -73,8 +35,8 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/max/Documents/Python/microblog/app/templates/user.html", line 11, in template
-    <p>{% user.followers.count() %} followers, {% user.followed.count() %} following</p>
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 7, in template
+    {% wtf.quick_form(form) %}
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
     return Parser(self, source, name, encode_filename(filename)).parse()
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
@@ -89,6 +51,14 @@ Traceback (most recent call last):
     result = self.subparse(end_tokens)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
     rv = self.parse_statement()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 213, in parse_if
+    'name:endif'))
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 144, in parse_statement
     self.fail_unknown_tag(token.value, token.lineno)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 97, in fail_unknown_tag
@@ -97,5 +67,45 @@ Traceback (most recent call last):
     self.fail(' '.join(message), lineno)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'user'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2018-09-24 22:23:53,550 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'wtf'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2018-09-26 19:35:12,228 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-26 19:36:13,960 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-26 19:40:49,507 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-26 22:07:21,998 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:53]
+2018-09-27 11:37:54,730 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:56]
+2018-09-27 11:38:38,859 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:56]
+2018-10-11 09:12:00,411 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:65]
+2018-10-16 18:28:20,508 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-16 18:28:34,733 ERROR: Exception on / [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 162, in unauthorized
+    if self.login_message:
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/speaklater.py", line 26, in __len__
+    return len(text_type(self))
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/speaklater.py", line 23, in __str__
+    return text_type(self._func(*self._args, **self._kwargs))
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/__init__.py", line 552, in gettext
+    t = get_translations()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/__init__.py", line 227, in get_translations
+    [get_locale()],
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
+    rv = babel.locale_selector_func()
+  File "/Users/max/Documents/Python/microblog/app/__init__.py", line 37, in get_locale
+    return request.accepted_languages.best_match(app.config['LANGUAGES'])
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'accepted_languages'
