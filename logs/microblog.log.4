@@ -1,102 +1,81 @@
-2018-10-16 18:28:37,436 ERROR: Exception on /favicon.ico [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
-    raise request.routing_exception
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
+2018-10-21 15:11:15,864 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:12:14,748 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:35:00,024 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:35:57,886 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:37:28,704 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:39:14,996 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:39:21,704 ERROR: Exception on /translate [POST] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
-    return handler(e)
-  File "/Users/max/Documents/Python/microblog/app/errors.py", line 7, in not_found_error
-    return render_template('404.html', title=404), 404
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/max/Documents/Python/microblog/app/templates/404.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 53, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/max/Documents/Python/microblog/app/templates/404.html", line 4, in block "app_content"
-    <h1>{{ _('File not found') }}</h1>
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/ext.py", line 134, in _gettext_alias
-    return __context.call(__context.resolve('gettext'), *args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/ext.py", line 140, in gettext
-    rv = __context.call(func, __string)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/__init__.py", line 116, in <lambda>
-    lambda x: get_translations().ugettext(x),
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/__init__.py", line 227, in get_translations
-    [get_locale()],
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
-    rv = babel.locale_selector_func()
-  File "/Users/max/Documents/Python/microblog/app/__init__.py", line 37, in get_locale
-    return request.accepted_languages.best_match(app.config['LANGUAGES'])
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'Request' object has no attribute 'accepted_languages'
-2018-10-16 18:30:12,079 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-16 18:32:25,313 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:67]
-2018-10-16 18:33:16,504 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-16 18:57:57,082 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:67]
-2018-10-16 19:04:37,823 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-16 19:11:42,217 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:67]
-2018-10-16 19:15:14,947 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:67]
-2018-10-16 19:16:08,348 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:67]
-2018-10-16 19:17:08,895 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-16 19:18:32,082 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-16 19:36:32,927 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-16 19:36:49,389 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 10:53:08,854 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 10:53:19,833 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 20:12:57,082 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 21:02:50,385 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 21:03:19,891 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 21:05:02,699 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 21:07:32,079 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 22:22:12,912 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 22:23:55,917 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 22:25:30,587 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 22:32:47,941 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 22:35:59,687 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-17 22:37:35,483 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 12:54:40,634 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 13:40:05,775 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 13:41:33,041 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 13:42:25,826 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 13:45:00,831 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 13:46:05,478 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 13:48:48,937 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 214, in translate_text
+    request.form['dest_language'])})
+  File "/Users/max/Documents/Python/microblog/app/translate.py", line 14, in translate
+    text_wrap = '[{"Text": "' + text.encode('utf-8') + '"}]'
+TypeError: must be str, not bytes
+2018-10-21 15:41:17,076 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:41:26,346 ERROR: Exception on /translate [POST] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 214, in translate_text
+    request.form['dest_language'])})
+  File "/Users/max/Documents/Python/microblog/app/translate.py", line 14, in translate
+    text_wrap = '[{"Text": "' + text.decode('utf-8') + '"}]'
+AttributeError: 'str' object has no attribute 'decode'
+2018-10-21 15:43:47,708 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:44:05,923 ERROR: Exception on /translate [POST] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 214, in translate_text
+    request.form['dest_language'])})
+  File "/Users/max/Documents/Python/microblog/app/translate.py", line 14, in translate
+    text_wrap = "[{'Text': '{}'}]".format(text)
+KeyError: "'Text'"
+2018-10-21 15:46:11,430 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:47:23,150 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:48:30,436 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 15:53:16,212 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 21:58:39,389 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 22:29:40,809 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-21 22:35:31,636 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-10-22 22:39:36,575 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-11-07 20:58:26,456 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+2018-11-08 09:19:08,819 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:73]

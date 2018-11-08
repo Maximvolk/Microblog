@@ -1,0 +1,123 @@
+2018-09-25 18:55:01,496 ERROR: Exception on / [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 23, in index
+    return render_template('index.html', title='Home Page', form=form, posts=posts)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 28, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 19, in block "content"
+    {% include '_post.html' %}
+  File "/Users/max/Documents/Python/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar(36) }}"></td>
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2018-09-25 18:58:16,441 ERROR: Exception on / [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 23, in index
+    return render_template('index.html', title='Home Page', form=form, posts=posts)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 28, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 19, in block "content"
+    {% include '_post.html' %}
+  File "/Users/max/Documents/Python/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2018-09-25 18:58:22,148 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 19:00:56,217 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 19:00:56,685 ERROR: Exception on /user/igor [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/app/routes.py", line 75, in user
+    posts = Post.query.filter_by(author=username).all()
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1688, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1688, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/sql/operators.py", line 344, in __eq__
+    return self.operate(eq, other)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py", line 180, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 1039, in __eq__
+    other, adapt_source=self.adapter))
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 1372, in _optimized_compare
+    state = attributes.instance_state(state)
+AttributeError: 'str' object has no attribute '_sa_instance_state'
+2018-09-25 19:02:45,297 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 19:04:35,392 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 19:14:49,763 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 19:25:32,371 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-25 19:38:55,901 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:47]
+2018-09-26 09:38:52,339 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:50]
+2018-09-26 15:09:30,059 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:50]
+2018-09-26 15:20:57,516 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:50]

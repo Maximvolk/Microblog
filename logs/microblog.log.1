@@ -1,41 +1,4 @@
-2018-10-19 14:24:10,784 ERROR: Exception on /translate [POST] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/connection.py", line 171, in _new_conn
-    (self._dns_host, self.port), self.timeout, **extra_kw)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/util/connection.py", line 56, in create_connection
-    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
-  File "/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 745, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno 8] nodename nor servname provided, or not known
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
-    chunked=chunked)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 343, in _make_request
-    self._validate_conn(conn)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 849, in _validate_conn
-    conn.connect()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/connection.py", line 314, in connect
-    conn = self._new_conn()
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/connection.py", line 180, in _new_conn
-    self, "Failed to establish a new connection: %s" % e)
-urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x10c0af4a8>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
-    timeout=timeout
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
-    _stacktrace=sys.exc_info()[2])
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/urllib3/util/retry.py", line 398, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.cognitive.microsofttranslator.com', port=443): Max retries exceeded with url: /translate?api-version=3.0&from=fr&to=en (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x10c0af4a8>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
-
-During handling of the above exception, another exception occurred:
-
+2018-11-08 09:31:04,674 ERROR: Exception on / [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -51,36 +14,47 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/app/routes.py", line 206, in translate_text
-    request.form['dest_language'])})
-  File "/Users/max/Documents/Python/microblog/app/translate.py", line 17, in translate
-    data=text, headers=auth)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/requests/api.py", line 112, in post
-    return request('post', url, data=data, json=json, **kwargs)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/requests/api.py", line 58, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
-    resp = self.send(prep, **send_kwargs)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
-    r = adapter.send(request, **kwargs)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/requests/adapters.py", line 513, in send
-    raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.cognitive.microsofttranslator.com', port=443): Max retries exceeded with url: /translate?api-version=3.0&from=fr&to=en (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x10c0af4a8>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
-2018-10-19 14:24:18,456 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 14:29:07,322 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 14:29:30,865 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 14:30:14,016 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 14:32:30,963 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 14:58:12,018 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 15:06:14,551 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 15:08:42,948 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 15:30:14,128 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 15:33:47,122 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-19 15:35:01,559 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-21 14:54:59,661 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-21 14:56:32,067 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-21 14:57:53,895 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-21 14:58:10,503 ERROR: Exception on /translate [POST] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+  File "/Users/max/Documents/Python/microblog/app/main/routes.py", line 46, in index
+    posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 18, in block "navbar"
+    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2018-11-08 09:33:36,366 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:73]
+2018-11-08 09:33:44,259 ERROR: Exception on / [GET] [in /Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -96,22 +70,43 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/max/Documents/Python/microblog/app/routes.py", line 214, in translate_text
-    request.form['dest_language'])})
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/json/__init__.py", line 321, in jsonify
-    dumps(data, indent=indent, separators=separators) + '\n',
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/json/__init__.py", line 179, in dumps
-    rv = _json.dumps(obj, **kwargs)
-  File "/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 238, in dumps
-    **kw).encode(obj)
-  File "/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 199, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-  File "/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 257, in iterencode
-    return _iterencode(o, 0)
-  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/json/__init__.py", line 81, in default
-    return _json.JSONEncoder.default(self, o)
-  File "/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 180, in default
-    o.__class__.__name__)
-TypeError: Object of type 'Response' is not JSON serializable
-2018-10-21 14:59:22,624 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
-2018-10-21 15:02:33,673 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:66]
+  File "/Users/max/Documents/Python/microblog/app/main/routes.py", line 46, in index
+    prev_url=prev_url)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/max/Documents/Python/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/max/Documents/Python/microblog/app/templates/base.html", line 18, in block "navbar"
+    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/Users/max/Documents/Python/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2018-11-08 09:34:28,050 INFO: Microblog startup [in /Users/max/Documents/Python/microblog/app/__init__.py:73]
