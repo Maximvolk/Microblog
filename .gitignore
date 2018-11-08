@@ -1,14 +1,14 @@
 .idea/
 
 # Cache
-*__pycache__/
+**/__pycache__/
 
 # Translations (temporary file)
 messages.pot
 
 # Environment
-venv
+venv/
 .env
 
 # Logs
-logs
+**/logs
